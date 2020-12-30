@@ -1,0 +1,61 @@
+{
+  "name": "static-site",
+  "version": "2.0.0b",
+  "description": "XXXXXX",
+  "main": "index.js",
+  "author": "Daniel Kurtius",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp serve",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XXXXXXX"
+  },
+  "keywords": [
+    "node",
+    "gulp"
+  ],
+  "bugs": {
+    "url": "https://github.com/Offhand-Studio/offhand.studio/issues"
+  },
+  "homepage": "https://github.com/Offhand-Studio/offhand.studio/#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "connect-gzip-static": "^2.1.1",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-hub": "^4.2.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-svgo": "^2.1.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp4-run-sequence": "^0.4.0",
+    "handlebars": "^4.1.2",
+    "handlebars-helpers": "^0.10.0",
+    "jstransformer": "^1.0.0",
+    "jstransformer-handlebars": "^1.1.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-discover-helpers": "^0.1.1",
+    "metalsmith-discover-partials": "^0.1.2",
+    "metalsmith-drafts": "^0.1.0",
+    "metalsmith-layouts": "^2.3.1",
+    "metalsmith-markdown": "^1.2.0",
+    "metalsmith-permalinks": "^2.2.0",
+    "metalsmith-register-helpers": "^0.4.0",
+    "metalsmith-sitemap": "^1.2.2",
+    "pump": "^3.0.0"
+  },
+  "dependencies": {
+    "@metalsmith/permalinks": "^2.2.0"
+  }
+}

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  {{> meta }}
+  <link href="/css/app.css?v={{version}}" crossorigin="anonymous" media="all" rel="stylesheet">
+</head>
+
+<body class="{{color}} cover" style="background-image:url('https://media.giphy.com/media/BlcWQ9L2VfOFO/giphy.gif');">
+
+{{> header}}
+  <main>
+    <h2 class="display-1">{{{headline}}}</h2>
+    {{{contents}}}
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<section class="project-previews">
+
+  {{#if section_title}}<h2>{{{section_title}}}</h2>{{/if}}
+
+  {{#each projects}}
+    <article class="{{{isActive @root.path path}}}">
+      <a href="/{{path}}" itemprop="url">
+        <div class="preview-box">
+          <img src="/assets/img/{{preview_img}}@0.jpg" class="preview--mini"/>
+          <picture>
+            <source media="(max-width: 544px)" srcset="/assets/img/{{preview_img}}--portrait.jpg, 
+                                                      /assets/img/{{preview_img}}--portrait@2.jpg 2x">
+            <img  src="/assets/img/{{preview_img}}@0.jpg" 
+                  srcset="/assets/img/{{preview_img}}--landscape@2.jpg 2x"
+                  data-src="/assets/img/{{preview_img}}--landscape.jpg" alt="{{name}}" class="lazyload preview blur-up"/>
+          </picture>
+        </div>
+        <h4>{{name}}</h4>
+        <h5>{{{desc}}}</h5>
+      </a>
+    </article>
+  {{/each}}
+  <article>
+      <a href="/" title="Let's Talk" itemprop="url" class="">
+        <div class="preview" style="--aspect-ratio:34/21">
+          <img src="/assets/img/." class="preview--mini"/>
+          <img src="/assets/img/." data-src="/assets/img/." alt=".." class="lazyload preview blur-up"/>
+        </div>
+        <h4>Unser neues, gemeinsames Projekt</h4>
+        <h5>{{{desc}}}</h5>
+      </a>
+    </article>
+</section>

@@ -1,0 +1,486 @@
+
+
+
+
+// Golden Ratio Gaps
+$gap-1: 10px;
+$gap-2: $gap-1 + $gap-1;
+$gap-3: $gap-1 + $gap-2;
+$gap-4: $gap-2 + $gap-3;
+$gap-5: $gap-3 + $gap-4;
+$gap-6: $gap-4 + $gap-5;
+$gap-7: $gap-5 + $gap-6;
+
+
+$size-sans--small:        15px;
+$size-sans--base:         19px;
+$size-sans--large:        24px;
+$size-sans--display:      31px;
+
+$size-sans-bold--small:   15px;
+$size-sans-bold--base:    1.02em;
+$size-sans-bold--large:   24px;
+$size-sans-bold--display: 31px;
+
+$size-serif--small:          15px;
+$size-serif--base:           1.05263em; //(20px)
+$size-serif--large:          25px;
+$size-serif--display:        31px;
+$size-serif--display:        34px;
+
+$color-black--base: #191B1F;
+$color-white--base: #E8E5E3;
+$color-white--base: #FFF;
+
+$color-black--1: rgba($color-black--base, .1);
+$color-black--3: rgba($color-black--base, .3);
+$color-black--6: rgba($color-black--base, .6);
+$color-black--9: rgba($color-black--base, .8);
+
+$color-white--1: rgba($color-white--base, .1);
+$color-white--3: rgba($color-white--base, .3);
+$color-white--6: rgba($color-white--base, .6);
+$color-white--9: rgba($color-white--base, .9);
+
+
+:root {
+  font-size: 19px;
+  --background: #{$color-black--base};
+  --white-1: #{$color-white--1};
+  --white-3: #{$color-white--3};
+  --white-6: #{$color-white--6};
+  --white-9: #{$color-white--9};
+  --black-1: #{$color-black--1};
+  --black-3: #{$color-black--3};
+  --black-6: #{$color-black--6};
+  --black-9: #{$color-black--9};
+  --gap-1: #{$gap-1};
+  --gap-2: #{$gap-2};
+  --gap-3: #{$gap-3};
+  --gap-4: #{$gap-4};
+  --gap-5: #{$gap-5};
+  --gap-6: #{$gap-6};
+  --gap-7: #{$gap-7};
+  --aspect-ratio-landscape: 34/21;
+  --aspect-ratio-portrait: 21/34;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 544px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1500px;
+}
+
+
+@import "vendor/normalize";
+@import "vendor/screen-reader";
+
+@import "modules/mixins";
+@import "modules/type-system";
+
+@import "modules/header";
+@import "modules/footer";
+
+
+
+// Type Colors
+
+@mixin type-color($color:"white") {
+  color: var(--#{$color}-6);
+  h1 { color: var(--#{$color}-9) }
+  h2 { color: var(--#{$color}-9) }
+  h3 { color: var(--#{$color}-9) }
+  h4 { color: var(--#{$color}-6) }
+  h5 { color: var(--#{$color}-3) }
+  .display-1 { color: var(--#{$color}-9) }
+
+  p {
+    strong{ color: var(--#{$color}-9); }
+    
+  }
+  
+  a { color: var(--#{$color}-6); text-decoration-color: var(--#{$color}-3); }
+  a:hover, a.active { color: var(--#{$color}-9) }
+  
+  aside { color: var(--#{$color}-3) }
+  footer {
+    color: var(--#{$color}-3);
+  }
+
+  a.up {
+    background-color: var(--#{$color}-9);
+  }
+}
+
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--black-9);
+  background: yellow;
+}
+::selection {
+  color:var(--black-9);
+  background: yellow;
+}
+
+html {
+  scroll-behavior: smooth;
+  
+}
+  
+body {
+  background-color: var(--background);
+  @include type-color("white");
+  margin-top: var(--gap-5);
+  margin-left: var(--gap-3);
+  margin-right: var(--gap-3);
+}
+
+// for full-cover pages (e.g. 404)
+body.cover {
+  height:calc(100vh - var(--gap-5));
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  grid-area: header;
+}
+
+
+
+
+
+
+//Background Color Classes
+.tan {
+  background-color: #a8d8ac;
+  @include type-color("black");
+
+}
+.profile {
+  // background-color: #a8d8ac;
+  background-image: url('/assets/img/Pico-Preview@0.jpg');
+  background-size: cover;
+  @include type-color("black");
+}
+.journal {
+  background-color: #a8d8ac;
+  // background-image: url('/assets/img/Greenhouse-Preview@0.jpg');
+  background-size: cover;
+  @include type-color("black");
+}
+.turbo {
+  background-color: #f5d022;
+  background-color: #D6D1CE;
+  @include type-color("black");
+}
+
+
+header,
+main,
+footer {
+  @include respond-down-to('sm') {
+    max-width: 1200px;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+main, footer, .project-previews {
+  @include respond-down-to('sm') {
+    display: grid;
+    column-gap: var(--gap-3);
+    row-gap: var(--gap-4);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.soon {
+  header {
+    @include respond-up-to('sm') {
+      margin-bottom: var(--gap-6)
+    } 
+  }
+  h2 { 
+    grid-column: 2/6;
+  }
+  footer {
+    @include respond-down-to('sm') {
+      margin-top: 45vh;
+    }
+    section {
+      grid-column: 1/7;
+    }
+  }
+} 
+
+.project-previews {
+  grid-column: 1/7;
+  h2 {
+    margin: var(--gap-5) 0  0;
+    grid-column: 1/7;
+    @include respond-up-to('sm') {
+      margin-bottom: var(--gap-4)
+    }
+  }
+}
+
+article {
+  grid-column-end: span 3;
+  &.active {
+    display: none;
+  }
+  // transition: all 0.4s;
+  // h4, h5 {transition: all 0.4s;}
+  // &:hover {
+  //   transform: scale(1.03);
+  //   h4 { color: var(--white-9) }
+  //   h5 { color: var(--white-6) }
+  //   .preview {
+  //     transform: scale(1);
+  //   }
+  // }
+  // &:hover ~ article {
+  //   // opacity: 0.2;
+  //   div {
+  //   }
+  //   .preview {
+  //     opacity: 0;
+  //   }
+  //   // h4 { color: var(--white-3) }
+  //   // h5 { color: var(--white-1) }
+  // }
+  a {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    &:hover, &:focus {
+      // background-color: var(--white-3)
+      // h4 { color: var(--white-9) }
+      // h5 { color: var(--white-6) }
+      img.preview {
+        opacity: 1;
+      }
+    }
+  }
+  div {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: var(--gap-1);
+    @include respond-up-to('sm') {
+      margin-bottom: var(--gap-1);
+    }
+  }
+  img {
+    position: relative;
+    width: 100%;
+    // height: 300px;
+    transition: all 0.4s;
+    &.preview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      // transform: scale(1.08);
+    }
+  }
+  .lazyload,
+	 .lazyloading {
+		opacity: 0;
+		transition: opacity 0.4s;
+	}
+
+	img.lazyloaded {
+		opacity: 1;
+	}
+  @include respond-up-to('sm') {
+    margin-bottom: var(--gap-4);
+    margin-left:  calc(var(--gap-1)*-1);
+    margin-right:  calc(var(--gap-1)*-1);
+  }
+}
+
+
+// cool aspect ratio hack… -> https://css-tricks.com/aspect-ratio-boxes/
+
+// [style*="--aspect-ratio"] > :first-child {
+//   width: 100%;
+// }
+// [style*="--aspect-ratio"] > img {
+//   height: auto;
+// }
+// @supports (--custom:property) {
+//   [style*="--aspect-ratio"] {
+//     position: relative;
+//   }
+//   [style*="--aspect-ratio"]::before {
+//     content: "";
+//     display: block;
+//     padding-bottom: calc(100% / (var(--aspect-ratio)));
+//   }
+//   [style*="--aspect-ratio"] > :first-child {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//   }
+// }
+.preview-box {
+  position: relative;
+  overflow: hidden;
+  > :first-child {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100%-1px); // fixing some strange 1px rounding error
+  }
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio-landscape)));
+    @include respond-up-to('sm') {
+      padding-bottom: calc(100% / (var(--aspect-ratio-portrait)));
+    }
+  }
+} 
+
+
+
+
+.display-1, .display-2 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+}
+
+
+
+
+// projects
+
+.project {
+  h3 {
+    grid-column: 3/7;
+    
+  }
+}
+
+aside {
+   grid-column: 1/3;
+   // font-size: $size-sans--small;
+   // text-align: right;
+   line-height: 27px;
+   ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+   }
+
+   @include respond-down-to('lg') {
+     grid-column: 2/3;
+   }
+   @include respond-down-to('xl') {
+     grid-column: 1/3;
+   }
+   @include respond-up-to('sm') {
+     ul {
+       margin-top: var(--gap-5);
+       margin-bottom: var(--gap-2);
+
+     }
+     li {
+       display: inline-block;
+       word-break: keep-all;
+       &:after {
+         content: ","
+       }
+       &:last-child:after {
+         content: ""
+       }
+     }
+   }
+ }
+
+.project {
+}
+
+
+.slide {
+  position: sticky;
+  top: 0;
+  grid-column: 1/7;
+  background-color: var(--background);
+
+  // https://cloudfour.com/thinks/breaking-out-with-css-grid-layout/
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  
+  .project-previews {
+    padding-top: 1px; // STRANGE STICKY with MARGIN FIX…
+    @include respond-down-to('xxl') {
+      margin: 0 var(--gap-7);
+    }
+    @include respond-up-to('xl') {
+      margin: 0 var(--gap-3);
+    }
+  }
+}
+
+figure {
+  margin: 0;
+  height: 100vh;
+  // width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center top;
+
+  overflow: hidden;
+
+
+}
+figcaption {
+  display: block;
+  position: absolute;
+  left: var(--gap-3);
+  top: var(--gap-2);
+  color: var(--white-3);
+  // font-size: $size-sans--small;
+  @include respond-down-to('xxl') {
+    left: auto;
+    right: var(--gap-3);
+  }
+}
+.light figcaption {
+  color: var(--black-3);
+}
+
+p {
+  grid-column: 3 / 7;
+    margin-bottom: var(--gap-4);
+
+  a {
+    font-family: inherit;
+    font-style: italic;
+    white-space: nowrap;
+    // text-underline-position: auto;
+    // text-decoration: underline;
+    // text-decoration-skip-ink: auto;
+    
+    // border-bottom: 1px solid var(--white-3)
+    &:hover {
+      // background-image:linear-gradient(90deg,red,blue);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+    }
+  }
+}
+abbr {
+  // text-transform: capitalize;
+  // font-variant-caps: small-caps;
+}

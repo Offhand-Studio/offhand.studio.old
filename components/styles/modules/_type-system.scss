@@ -1,0 +1,133 @@
+
+@import "../fonts";
+
+@mixin sans {
+  font-family: "sans", sans-serif;
+  font-weight: 300;
+  font-feature-settings:"kern", "ss03", "liga", "dlig", "calt", "onum";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin sans-bold {
+  font-family: "sans", sans-serif;
+  font-weight: 400;
+  font-feature-settings:"kern", "ss03", "liga", "dlig", "calt", "onum";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin serif {
+  font-family: "serife", serif;
+  font-weight: 300;
+  letter-spacing: 0.1px;
+  font-feature-settings:"kern", "ss03", "liga", "dlig", "calt";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+// only used @masthead logo
+h1 {
+  @include sans-bold;
+  font-size: $size-sans-bold--large;
+
+  // @include respond-down-to('xs') {
+  //   font-size:  $size-sans-bold--large;
+  // }
+  // @include respond-down-to('sm') {
+  //   font-size:  $size-sans-bold--base;
+  // }
+  //
+  // @include respond-down-to('xl') {
+  //   font-size:  $size-sans-bold--large;
+  // }
+
+}
+
+p {
+  line-height: 27px;
+  margin: 0;
+  em {
+    @include serif;
+    font-size:$size-sans--base;
+    line-height: 25px;
+  }
+  strong {
+    @include sans-bold;
+    font-size:$size-sans-bold--base;
+  }
+  &.serif {
+    @include serif;
+    font-size:$size-serif--base;
+    margin-top:-1px;
+  }
+
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  margin: 0;
+  font-family: inherit;
+}
+
+
+h2 {
+  font-size: $size-sans-bold--base;
+  font-weight: 400;
+}
+
+
+h3 {
+  // font-size: $size-sans-bold--base;
+  // font-weight: 400;
+  @include serif;
+    font-size:$size-serif--base;
+    font-style: italic;
+    line-height: 27px;
+}
+
+// Headlines for Tiles
+h4, h5 {
+  @include sans;
+  line-height: 26px;
+  font-size: $size-sans--base;
+}
+
+.display-1 {
+  @include serif;
+  // font-size: $size-serif--large;
+  // line-height: 1.35em;
+  // margin-bottom: var(--gap-3);
+  font-size: $size-serif--display;
+  line-height: 1.27em;
+  @include respond-down-to('lg') {
+    font-size: $size-serif--display;
+    line-height: 1.27em;
+  }
+  strong {
+    @include sans-bold;
+    letter-spacing: -0.02em;
+    font-size: $size-serif--display - 2px;
+    text-decoration: underline;
+  }
+  small {
+    display: block;
+    @include sans;
+    font-size: $size-sans--base;
+    color: var(--white-3);
+  }
+}
+
+
+
+html {
+  @include sans;
+
+}
+strong {
+  font-weight: bold;
+}

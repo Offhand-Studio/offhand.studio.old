@@ -1,0 +1,32 @@
+<footer>
+  <a href="#" class="up"></a>
+  <nav id="footer-major-nav" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+    {{#each major_pages}}
+      <a href="/{{path}}" title="{{name}}" itemprop="url" class="{{{isActive @root.path path}}}">
+        <span itemprop="name">{{name}}</span>
+      </a>
+    {{/each}}
+  </nav>
+
+  <nav id="footer-minor-nav" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+    {{#each minor_pages}}
+      <a href="/{{path}}" title="{{name}}" itemprop="url" class="{{{isActive @root.path path}}}">
+        <span itemprop="name">{{name}}</span>
+      </a>
+    {{/each}}
+  </nav>
+
+  <section>© 2020 Offhand Studio.<br><a href="/colophon" class="{{{isActive "/colophon" path}}}">Colophon</a>
+  </section>
+
+</footer>
+<script async="" src="/js/app.js?v={{version}}"></script>
+<!-- <script type="application/javascript" async src="https://www.googletagmanager.com/gtag/js?id={{ site.analyticsID }}"></script>
+<script type="application/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.analyticsID }}');
+  gtag('set', 'anonymizeIp',true);
+</script> -->
+<!-- <script src="https://embed.small.chat/TD1UB6752GF4QD2N0G.js" async></script> -->

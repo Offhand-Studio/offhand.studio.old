@@ -1,0 +1,21 @@
+<header id="masthead">
+  <h1 id="logo" class="wordmark" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <a href="/" aria-label="Homepage" itemprop="url" title="{{title}} Homepage" tabindex="-1">
+      {{title}}
+      <span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+        <img itemprop="url" src="/assets/img/Offhand-Studio-Wordmark--Black.png" alt="{{title}}">
+      </span>
+    </a>
+    <span class="screen-reader" itemprop="name">{{title}}</span>
+  </h1>
+
+  {{#if main_nav}}
+  <nav id="main-nav" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+    {{#each major_pages}}
+      <a href="/{{path}}" title="{{name}}" itemprop="url" class="{{{isActive @root.path path}}}">
+        <span itemprop="name">{{name}}</span>
+      </a>
+    {{/each}}
+  </nav>
+  {{/if}}
+</header>

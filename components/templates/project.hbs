@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  {{> meta }}
+  <link href="/css/app.css?v={{version}}" crossorigin="anonymous" media="all" rel="stylesheet">
+</head>
+
+<body class="{{color}} project">
+  {{> header}}
+
+
+
+  <main>
+  
+  <h2 class="display-1">{{{headline}}}</h2>
+  
+
+  <h3>{{{intro}}}</h3>
+
+
+  <aside class="skills">
+    <ul>
+      {{#each skills}}
+          <li>{{{.}}}</li>
+      {{/each}}
+    </ul>
+  </aside>
+
+
+  {{{contents}}}
+
+<div class="slide">
+  {{> project-previews section_title='Weitere Projekte'}}
+</div>
+
+  </main>
+
+  {{> footer}}
+
+
+</body>
+
+</html>

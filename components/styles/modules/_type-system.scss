@@ -53,7 +53,7 @@ p {
   margin: 0;
   em {
     @include serif;
-    font-size:$size-sans--base;
+    font-size:$size-serif--base;
     line-height: 25px;
   }
   strong {

@@ -33,7 +33,7 @@ skills:
   - Grafik Design
   - UX Design
 
-
+theme:dark
 
 
 ---

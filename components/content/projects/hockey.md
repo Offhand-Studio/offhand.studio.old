@@ -33,7 +33,7 @@ skills:
   - Interface Design
   - Grafik Design
 
-color: dark
+theme: dark
 
 ---
 

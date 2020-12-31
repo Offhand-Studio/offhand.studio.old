@@ -20,7 +20,7 @@ main_nav: true
 
 
 headline: "Hey. Wir sind <strong>Offhand</strong>. Wir konzipieren und gestalten visuelle Identitäten und digitale Produkte für innovative Ideen und junge Unternehmen."
-color: profile
+theme: profile
 
 ---
 Das Design Studio wurde 2018 in Hamburg gegründet und wird von Daniel Kurtius geleitet. 

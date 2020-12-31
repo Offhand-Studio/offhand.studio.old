@@ -15,6 +15,6 @@ name: Offhand Studio
 
 # headline: 'Wir entwickeln aus <strong>frischen Ideen</strong> belastbare Marken, Services und Produkte.'
 headline: 'Das Studio gibt es schon fast 3 Jahre.<br>Ab <strong>Frühling 2021</strong> dann auch mal mit eigener Seite.'
-color: dark
+theme: dark
 
 ---

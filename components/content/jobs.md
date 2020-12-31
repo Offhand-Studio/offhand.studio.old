@@ -18,7 +18,7 @@ main_nav: true
 
 
 headline: 'Come work with us'
-color: tan
+theme: tan
 
 ---
 <p class="serif">

@@ -19,7 +19,7 @@ main_nav: true
 
 
 headline: 'Wir machen aus wilden Ideen belastbare Marken, Services und Produkte.'
-color: journal
+theme: journal
 
 ---
 This is a test

@@ -19,7 +19,7 @@ main_nav: true
 
 
 headline: 'Ausgewählte Projekte'
-color: dark
+theme: dark
 
 ---
 

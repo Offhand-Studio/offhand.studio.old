@@ -5,7 +5,7 @@
   <link href="/css/app.css?v={{version}}" crossorigin="anonymous" media="all" rel="stylesheet">
 </head>
 
-<body class="{{color}}">
+<body class="{{theme}}">
   {{> header}}
 
 
@@ -16,9 +16,9 @@
   {{{contents}}}
 
 
-
+{{#if show_previews }}
   {{> project-previews }}
-
+{{/if}}
 
   </main>
 

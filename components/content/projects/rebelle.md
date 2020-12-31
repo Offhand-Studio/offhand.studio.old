@@ -23,7 +23,7 @@ preview_img: Rebelle-Preview
 
 
 headline: 'Rebelle — Preloved Fashion'
-color: dark
+theme: dark
 
 skills:
   - Creative Direction

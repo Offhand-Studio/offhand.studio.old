@@ -36,7 +36,7 @@ skills:
   - Interface Design
 
 
-color: dark
+theme: dark
 
 ---
 

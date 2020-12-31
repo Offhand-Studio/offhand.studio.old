@@ -106,7 +106,9 @@ $color-white--9: rgba($color-white--base, .9);
   footer {
     color: var(--#{$color}-3);
   }
-
+  .mute {
+    color: var(--#{$color}-3);
+  }
   a.up {
     background-color: var(--#{$color}-9);
   }
@@ -124,7 +126,6 @@ $color-white--9: rgba($color-white--base, .9);
 
 html {
   scroll-behavior: smooth;
-  
 }
   
 body {
@@ -152,6 +153,11 @@ header {
 
 
 //Background Color Classes
+.ogre {
+  background-color: #F6F5F4;
+  @include type-color("black");
+
+}
 .tan {
   background-color: #a8d8ac;
   @include type-color("black");
@@ -354,6 +360,9 @@ article {
 .display-1, .display-2 {
     grid-column-start: 3;
     grid-column-end: 7;
+    @include respond-up-to('sm') {
+      margin-bottom: var(--gap-4);
+    }
 }
 
 
@@ -364,7 +373,6 @@ article {
 .project {
   h3 {
     grid-column: 3/7;
-    
   }
 }
 
@@ -466,13 +474,12 @@ p {
 
   a {
     font-family: inherit;
-    font-style: italic;
-    white-space: nowrap;
+    // font-style: italic;
+    // white-space: nowrap;
     // text-underline-position: auto;
     // text-decoration: underline;
     // text-decoration-skip-ink: auto;
     
-    // border-bottom: 1px solid var(--white-3)
     &:hover {
       // background-image:linear-gradient(90deg,red,blue);
       // -webkit-background-clip: text;

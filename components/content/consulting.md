@@ -19,7 +19,7 @@ main_nav: true
 
 
 headline: 'Mentoring & Beratung'
-color: dark
+theme: dark
 
 ---
 <p class="serif">

@@ -21,7 +21,7 @@ main_nav: true
 
 
 headline: 'Emilia.'
-color: dark
+theme: dark
 
 ---
 <p class="serif"><i>"Wir bauen eine virtuelle Assistenz mit Conversational Interface — Hast Du Lust?"</i>

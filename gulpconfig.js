@@ -82,6 +82,10 @@ module.exports = {
         gfm: true,
         tables: true
       },
+      "@metalsmith/permalinks" : {                // https://www.npmjs.com/package/@metalsmith/permalinks
+        pattern: ":url",
+        relative: false,
+      },
       "metalsmith-register-helpers": {            // https://www.npmjs.com/package/metalsmith-register-helpers
         directory: templates + "/helpers"
       },
@@ -96,19 +100,9 @@ module.exports = {
         default: "default.hbs",
         rename: true
       },
-      "@metalsmith/permalinks" : {
-        pattern: ":url",
-        relative: false,
-        linksets: [
-          {
-            match: { collection: 'projects' },
-            pattern: ':url'
-          },
-        ]
-      },
-      // "metalsmith-permalinks": {                  // https://www.npmjs.com/package/metalsmith-permalinks
-      //   // pattern: ":url",
-      //   // relative: false
+      // "@metalsmith/permalinks" : {                // https://www.npmjs.com/package/@metalsmith/permalinks
+      //   pattern: ":url",
+      //   relative: false,
       // },
       "metalsmith-sitemap": {                     // https://github.com/ExtraHop/metalsmith-sitemap
         hostname: "https://offhand.studio/",
